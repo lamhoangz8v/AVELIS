@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liên Hệ – AVELIS | Đặt Hàng & Tư Vấn Nước Hoa Cá Nhân Hóa</title>
+  <meta name="description"
+    content="Liên hệ AVELIS để đặt hàng, tư vấn nước hoa cá nhân hóa theo cơ địa hoặc quà tặng. Email: avelis.official01@gmail.com" />
+  <link type="text/css" rel="stylesheet" href="./css/showHideNav.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link href="./dist/output.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <!-- EmailJS SDK: gửi email trực tiếp từ trình duyệt, không cần backend -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+  <script src="./js/jquery.hidescroll.js" defer></script>
+  <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script defer type="module" src="./js/main.js"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: hsl(40, 20%, 98%);
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid hsl(40, 8%, 85%);
+      background: white;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      color: hsl(40, 2%, 15%);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    .form-input:focus {
+      border-color: hsl(43, 74%, 49%);
+    }
+
+    .form-input::placeholder {
+      color: hsl(40, 5%, 65%);
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: hsl(40, 5%, 55%);
+      font-family: 'Inter', sans-serif;
+      margin-bottom: 6px;
+    }
+
+    textarea.form-input {
+      resize: vertical;
+      min-height: 140px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid hsl(40, 8%, 90%);
+    }
+
+    .faq-question {
+      cursor: pointer;
+      padding: 1.25rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-answer {
+      display: none;
+      padding-bottom: 1.25rem;
+    }
+
+    .faq-answer.open {
+      display: block;
+    }
+
+    .faq-icon {
+      transition: transform 0.3s;
+    }
+
+    .faq-icon.open {
+      transform: rotate(45deg);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <header class="relative z-50">
+    <div class="flex items-center justify-center navbar bg-p-50/95 backdrop-blur-sm border-b border-n-100">
+      <div class="max-w-[1536px] w-full px-6 py-5 md:py-6 md:px-[72px] flex items-center justify-between">
+        <a href="./index.html" class="flex items-center gap-3 flex-none">
+          <div class="flex flex-col leading-none">
+            <span
+              style="font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:600; letter-spacing:0.25em; color:hsl(0,0%,10%)">AVELIS</span>
+            <span
+              style="font-size:0.55rem; letter-spacing:0.35em; text-transform:uppercase; color:hsl(43,74%,49%); font-family:'Inter',sans-serif; margin-top:1px">Your
+              Scent</span>
+          </div>
+        </a>
+        <nav class="items-center justify-end hidden w-full gap-8 lg:flex">
+          <a href="./products.html" class="navLink">Sản Phẩm</a>
+          <a href="./about.html" class="navLink">Giới Thiệu</a>
+          <a href="./blog.html" class="navLink">Blog</a>
+          <a href="./news.html" class="navLink">Tin Tức</a>
+          <a href="./contact.html" class="navLink" style="color:hsl(43,74%,49%)">Liên Hệ</a>
+        </nav>
+        <div class="block cursor-pointer lg:hidden" id="toggle_btn">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <line x1="2" y1="5" x2="20" y2="5" stroke="hsl(0,0%,10%)" stroke-width="1.5" />
+            <line x1="2" y1="11" x2="20" y2="11" stroke="hsl(0,0%,10%)" stroke-width="1.5" />
+            <line x1="2" y1="17" x2="20" y2="17" stroke="hsl(0,0%,10%)" stroke-width="1.5" />
+          </svg>
+        </div>
+        <div class="dropdown-menu lg:hidden">
+          <a href="./products.html" class="navLink mobileNavLink">Sản Phẩm</a>
+          <a href="./about.html" class="navLink mobileNavLink">Giới Thiệu</a>
+          <a href="./blog.html" class="navLink mobileNavLink">Blog</a>
+          <a href="./news.html" class="navLink mobileNavLink">Tin Tức</a>
+          <a href="./contact.html" class="navLink mobileNavLink">Liên Hệ</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative h-[40vh] max-h-[350px] overflow-hidden bg-p-950">
+    <img src="./assets/8.jpg" alt="Contact AVELIS" class="absolute inset-0 w-full h-full object-cover opacity-25" />
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+      <p class="text-xs tracking-[0.5em] uppercase font-inter text-p-400 mb-3" data-aos="fade-up">Kết Nối</p>
+      <h1 data-aos="fade-up" data-aos-delay="100"
+        style="font-family:'Cormorant Garamond',serif; font-size:clamp(2.5rem,6vw,4rem); color:white; font-weight:400">
+        Liên Hệ <em style="font-style:italic; color:hsl(43,74%,65%)">AVELIS</em>
+      </h1>
+      <p class="text-white/40 text-xs tracking-widest uppercase font-inter mt-3" data-aos="fade-up"
+        data-aos-delay="200">Đặt hàng · Tư vấn · Quà tặng cá nhân hóa</p>
+    </div>
+  </section>
+
+  <!-- CONTACT MAIN -->
+  <section class="bg-p-50">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+
+        <!-- Contact Info (2 cols) -->
+        <div class="lg:col-span-2" data-aos="fade-right">
+          <h2 class="sub_heading">Thông Tin</h2>
+          <h1
+            style="font-family:'Cormorant Garamond',serif; font-size:2rem; color:hsl(0,0%,10%); margin-top:0.5rem; font-weight:400">
+            Liên Lạc Với Chúng Tôi</h1>
+          <div style="width:40px; height:1px; background:hsl(43,74%,49%); margin:1.5rem 0"></div>
+
+          <div class="space-y-6">
+            <div class="flex gap-4 items-start">
+              <div
+                style="width:40px; height:40px; border:1px solid hsl(43,74%,49%); display:flex; align-items:center; justify-content:center; flex-shrink:0">
+                <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"
+                    fill="hsl(43,74%,49%)" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs tracking-widest uppercase font-inter text-n-500 mb-1">Địa Chỉ</p>
+                <p class="text-n-700 text-sm leading-relaxed">8-14 Đ. Nguyễn Bá Tuyển, P. Bảy Hiền, TP. Hồ Chí Minh</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 items-start">
+              <div
+                style="width:40px; height:40px; border:1px solid hsl(43,74%,49%); display:flex; align-items:center; justify-content:center; flex-shrink:0">
+                <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
+                  <path
+                    d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                    fill="hsl(43,74%,49%)" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs tracking-widest uppercase font-inter text-n-500 mb-1">Email</p>
+                <a href="mailto:avelis.official01@gmail.com"
+                  class="text-n-700 text-sm hover:text-p-500 transition-colors">avelis.official01@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="flex gap-4 items-start">
+              <div
+                style="width:40px; height:40px; border:1px solid hsl(43,74%,49%); display:flex; align-items:center; justify-content:center; flex-shrink:0">
+                <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
+                  <path
+                    d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+                    fill="hsl(43,74%,49%)" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-xs tracking-widest uppercase font-inter text-n-500 mb-1">Điện Thoại / Zalo</p>
+                <a href="tel:0932182907" class="text-n-700 text-sm hover:text-p-500 transition-colors">0932 182 907</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social -->
+          <div class="mt-10">
+            <p class="text-xs tracking-widest uppercase font-inter text-n-500 mb-4">Mạng Xã Hội</p>
+            <div class="flex gap-3">
+              <a href="https://www.facebook.com/share/1Dehv88caj/?mibextid=wwXIfr" target="_blank" id="contact-facebook"
+                class="border border-n-200 p-3 hover:border-p-500 hover:text-p-500 transition-all group">
+                <svg width="16" height="16" fill="hsl(40,2%,15%)" class="group-hover:fill-amber-500 transition-colors"
+                  viewBox="0 0 24 24">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg>
+              </a>
+              <a href="https://www.instagram.com/p/DZJ4quxuGCa/?igsh=MTBvNnNrcnF4ZWw2dQ==" target="_blank"
+                id="contact-instagram" class="border border-n-200 p-3 hover:border-p-500 transition-all group">
+                <svg width="16" height="16" fill="none" stroke="hsl(40,2%,15%)" stroke-width="2"
+                  class="group-hover:stroke-amber-500 transition-colors" viewBox="0 0 24 24">
+                  <rect x="2" y="2" width="20" height="20" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.5" cy="6.5" r="1" fill="hsl(40,2%,15%)" stroke="none" />
+                </svg>
+              </a>
+              <a href="#" id="contact-tiktok" class="border border-n-200 p-3 hover:border-p-500 transition-all group">
+                <svg width="16" height="16" fill="hsl(40,2%,15%)" class="group-hover:fill-amber-500 transition-colors"
+                  viewBox="0 0 24 24">
+                  <path
+                    d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.89a8.2 8.2 0 0 0 4.77 1.52V7.01a4.85 4.85 0 0 1-1-.32z" />
+                </svg>
+              </a>
+              <a href="#" id="contact-shopee" class="border border-n-200 px-3 py-3 hover:border-p-500 transition-all">
+                <span class="text-xs tracking-widest font-inter text-n-700 hover:text-p-500">Shopee</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Hours -->
+          <div class="mt-10 p-6 border border-n-100 bg-white">
+            <p class="text-xs tracking-widest uppercase font-inter text-n-500 mb-4">Giờ Hỗ Trợ</p>
+            <div class="space-y-2">
+              <div class="flex justify-between text-sm font-inter">
+                <span class="text-n-600">Thứ 2 – Thứ 6</span>
+                <span class="text-n-800">8:00 – 22:00</span>
+              </div>
+              <div class="flex justify-between text-sm font-inter">
+                <span class="text-n-600">Thứ 7 – Chủ Nhật</span>
+                <span class="text-n-800">9:00 – 21:00</span>
+              </div>
+            </div>
+            <p class="text-n-400 text-xs font-inter mt-3">Phản hồi trong vòng 24 giờ làm việc</p>
+          </div>
+        </div>
+
+        <!-- Contact Form (3 cols) -->
+        <div class="lg:col-span-3" data-aos="fade-left">
+          <h2 class="sub_heading">Gửi Tin Nhắn</h2>
+          <h1
+            style="font-family:'Cormorant Garamond',serif; font-size:2rem; color:hsl(0,0%,10%); margin-top:0.5rem; font-weight:400">
+            Chúng Tôi Luôn Lắng Nghe</h1>
+          <div style="width:40px; height:1px; background:hsl(43,74%,49%); margin:1.5rem 0"></div>
+
+          <form id="contact-form" class="space-y-5">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div>
+                <label class="form-label" for="contact-name">Họ và Tên *</label>
+                <input type="text" id="contact-name" class="form-input" placeholder="Nguyễn Văn A" required />
+              </div>
+              <div>
+                <label class="form-label" for="contact-email">Email *</label>
+                <input type="email" id="contact-email" class="form-input" placeholder="email@example.com" required />
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div>
+                <label class="form-label" for="contact-phone">Số Điện Thoại / Zalo</label>
+                <input type="tel" id="contact-phone" class="form-input" placeholder="0912 345 678" />
+              </div>
+              <div>
+                <label class="form-label" for="contact-subject">Chủ Đề</label>
+                <select id="contact-subject" class="form-input">
+                  <option value="">Chọn chủ đề...</option>
+                  <option value="order">Đặt Hàng</option>
+                  <option value="gift">Quà Tặng Cá Nhân Hóa</option>
+                  <option value="consult">Tư Vấn Mùi Hương</option>
+                  <option value="wholesale">Hợp Tác / Bán Sỉ</option>
+                  <option value="other">Khác</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label class="form-label" for="contact-product">Sản Phẩm Quan Tâm</label>
+              <div class="flex gap-3 flex-wrap">
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" id="check-him" name="product" value="forhim" class="accent-amber-500" /> <span
+                    class="text-sm font-inter text-n-600">FOR HIM</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" id="check-her" name="product" value="forher" class="accent-amber-500" /> <span
+                    class="text-sm font-inter text-n-600">FOR HER</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" id="check-set" name="product" value="set" class="accent-amber-500" /> <span
+                    class="text-sm font-inter text-n-600">Bộ Quà Tặng</span>
+                </label>
+              </div>
+            </div>
+            <div>
+              <label class="form-label" for="contact-message">Tin Nhắn *</label>
+              <textarea id="contact-message" class="form-input"
+                placeholder="Cho chúng tôi biết bạn cần gì — tư vấn mùi hương, đặt hàng, hay tùy chỉnh bao bì..."
+                required></textarea>
+            </div>
+            <button type="submit" id="contact-submit" class="btn-gold w-full" style="padding:16px; font-size:0.75rem">
+              <span id="btn-text">Gửi Tin Nhắn</span>
+              <span id="btn-loading" style="display:none">Đang gửi...</span>
+            </button>
+            <p id="form-success" class="text-center text-sm font-inter hidden"
+              style="color:#2d7a4f; background:#f0faf4; padding:12px; border:1px solid #b6e0c8; margin-top:8px">✓ Tin
+              nhắn đã được gửi! Chúng tôi sẽ phản hồi trong vòng 24 giờ.</p>
+            <p id="form-error" class="text-center text-sm font-inter hidden"
+              style="color:#c0392b; background:#fdf0ee; padding:12px; border:1px solid #f5c6be; margin-top:8px">✗ Gửi
+              thất bại. Vui lòng thử lại hoặc liên hệ qua Zalo: 0932 182 907</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-p-100">
+    <div class="container">
+      <div class="text-center mb-10" data-aos="fade-up">
+        <h2 class="sub_heading">FAQ</h2>
+        <h1 class="main_heading">Câu Hỏi <span class="text-gradient">Thường Gặp</span></h1>
+      </div>
+      <div class="max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span class="text-n-800 font-inter text-sm font-medium">AVELIS có ship toàn quốc không?</span>
+            <svg class="faq-icon" width="16" height="16" fill="none" viewBox="0 0 16 16">
+              <path d="M8 2v12M2 8h12" stroke="hsl(43,74%,49%)" stroke-width="1.5" />
+            </svg>
+          </div>
+          <div class="faq-answer text-n-500 text-sm leading-relaxed pb-4">Có, AVELIS ship toàn quốc qua các đơn vị vận
+            chuyển như GHN, GHTK, J&T. Thời gian giao hàng 2–5 ngày làm việc tùy khu vực. Miễn phí ship cho đơn từ
+            500.000đ.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span class="text-n-800 font-inter text-sm font-medium">Tôi có thể cá nhân hóa nhãn chai như thế nào?</span>
+            <svg class="faq-icon" width="16" height="16" fill="none" viewBox="0 0 16 16">
+              <path d="M8 2v12M2 8h12" stroke="hsl(43,74%,49%)" stroke-width="1.5" />
+            </svg>
+          </div>
+          <div class="faq-answer text-n-500 text-sm leading-relaxed pb-4">Bạn có thể yêu cầu in tên, biệt danh hoặc tên
+            người nhận lên nhãn chai. Với bộ quà tặng, chúng tôi còn cung cấp thiệp riêng để ghi lời nhắn. Vui lòng ghi
+            rõ thông tin trong phần "Tin nhắn" khi liên hệ.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span class="text-n-800 font-inter text-sm font-medium">Mùi hương có thể khác nhau giữa hai người đeo cùng
+              một chai không?</span>
+            <svg class="faq-icon" width="16" height="16" fill="none" viewBox="0 0 16 16">
+              <path d="M8 2v12M2 8h12" stroke="hsl(43,74%,49%)" stroke-width="1.5" />
+            </svg>
+          </div>
+          <div class="faq-answer text-n-500 text-sm leading-relaxed pb-4">Đúng vậy! Đây là tính năng cốt lõi của AVELIS
+            — Personal Chemistry Perfume. Do pH da, nhiệt độ cơ thể và vi khuẩn da của mỗi người khác nhau, mùi hương sẽ
+            phát triển theo cách riêng biệt trên từng làn da. Đó là lý do AVELIS là "độc bản trên da".</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span class="text-n-800 font-inter text-sm font-medium">Nồng độ EDP là gì và lưu hương bao lâu?</span>
+            <svg class="faq-icon" width="16" height="16" fill="none" viewBox="0 0 16 16">
+              <path d="M8 2v12M2 8h12" stroke="hsl(43,74%,49%)" stroke-width="1.5" />
+            </svg>
+          </div>
+          <div class="faq-answer text-n-500 text-sm leading-relaxed pb-4">EDP (Eau de Parfum) là nồng độ nước hoa cao,
+            chứa 15–20% tinh dầu thơm. AVELIS YOUR SCENT EDP lưu hương 6–8 tiếng, tỏa hương trong phạm vi 1–2 mét — phù
+            hợp môi trường học tập, làm việc và gặp gỡ xã hội.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span class="text-n-800 font-inter text-sm font-medium">Chính sách đổi trả như thế nào?</span>
+            <svg class="faq-icon" width="16" height="16" fill="none" viewBox="0 0 16 16">
+              <path d="M8 2v12M2 8h12" stroke="hsl(43,74%,49%)" stroke-width="1.5" />
+            </svg>
+          </div>
+          <div class="faq-answer text-n-500 text-sm leading-relaxed pb-4">Do tính chất cá nhân hóa của sản phẩm, chúng
+            tôi chấp nhận đổi/trả trong vòng 7 ngày nếu sản phẩm bị lỗi về chất lượng hoặc giao sai sản phẩm. Vui lòng
+            liên hệ qua email để được hỗ trợ.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-p-950 border-t border-n-800">
+    <div class="container py-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <span
+          style="font-family:'Cormorant Garamond',serif; font-size:1.5rem; letter-spacing:0.25em; color:white">AVELIS</span>
+        <p class="text-white/30 text-xs font-inter">© 2025 AVELIS. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="./index.html" class="text-white/40 hover:text-p-400 text-xs font-inter transition-colors">Trang
+            Chủ</a>
+          <a href="./products.html" class="text-white/40 hover:text-p-400 text-xs font-inter transition-colors">Sản
+            Phẩm</a>
+          <a href="./blog.html" class="text-white/40 hover:text-p-400 text-xs font-inter transition-colors">Blog</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ============================================================
+    // EMAILJS SETUP – Làm theo 4 bước sau:
+    // 1. Vào https://www.emailjs.com → Sign Up (dùng Gmail AVELIS)
+    // 2. Add New Service → Gmail → kết nối avelis.official01@gmail.com
+    //    → Copy "Service ID" dán vào EMAILJS_SERVICE_ID bên dưới
+    // 3. Email Templates → Create Template:
+    //    Subject: "[AVELIS] Tin nhắn từ {{from_name}}"
+    //    Body: Từ: {{from_name}} | Email: {{reply_to}} | SDT: {{phone}}
+    //          Chủ đề: {{subject}} | Sản phẩm: {{products}}
+    //          Nội dung: {{message}}
+    //    → Copy "Template ID" dán vào EMAILJS_TEMPLATE_ID bên dưới
+    // 4. Account → General → Copy "Public Key" dán vào EMAILJS_PUBLIC_KEY
+    // ============================================================
+    const EMAILJS_SERVICE_ID = 'service_gt8rx3h';
+    const EMAILJS_TEMPLATE_ID = 'template_2d6upbu';
+    const EMAILJS_PUBLIC_KEY = 'BcziIi0Qdi9gPLkH1';
+    // Khởi tạo EmailJS
+    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+    // FAQ toggle
+    function toggleFaq(el) {
+      const answer = el.nextElementSibling;
+      const icon = el.querySelector('.faq-icon');
+      answer.classList.toggle('open');
+      icon.classList.toggle('open');
+    }
+
+    // Form submit
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const btnText = document.getElementById('btn-text');
+      const btnLoading = document.getElementById('btn-loading');
+      const btnSubmit = document.getElementById('contact-submit');
+      const successMsg = document.getElementById('form-success');
+      const errorMsg = document.getElementById('form-error');
+
+      // Lấy sản phẩm được chọn
+      const products = [...document.querySelectorAll('input[name="product"]:checked')]
+        .map(cb => cb.value === 'forhim' ? 'FOR HIM' : cb.value === 'forher' ? 'FOR HER' : 'Bộ Quà Tặng')
+        .join(', ') || 'Chưa chọn';
+
+      // UI loading
+      btnText.style.display = 'none';
+      btnLoading.style.display = 'inline';
+      btnSubmit.disabled = true;
+      successMsg.classList.add('hidden');
+      errorMsg.classList.add('hidden');
+
+      const templateParams = {
+        from_name: document.getElementById('contact-name').value,
+        reply_to: document.getElementById('contact-email').value,
+        phone: document.getElementById('contact-phone').value || 'Không có',
+        subject: document.getElementById('contact-subject').value || 'Không rõ',
+        products: products,
+        message: document.getElementById('contact-message').value,
+        to_email: 'avelis.official01@gmail.com',
+      };
+
+      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+        .then(() => {
+          successMsg.classList.remove('hidden');
+          document.getElementById('contact-form').reset();
+          setTimeout(() => successMsg.classList.add('hidden'), 8000);
+        })
+        .catch((err) => {
+          console.error('EmailJS error:', err);
+          errorMsg.classList.remove('hidden');
+          setTimeout(() => errorMsg.classList.add('hidden'), 8000);
+        })
+        .finally(() => {
+          btnText.style.display = 'inline';
+          btnLoading.style.display = 'none';
+          btnSubmit.disabled = false;
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      if (window.AOS) AOS.init({ duration: 700, once: true });
+    });
+  </script>
+</body>
+
+</html>

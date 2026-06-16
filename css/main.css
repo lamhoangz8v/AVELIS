@@ -3,15 +3,13 @@
 
 /** Theme **/
 @theme {
-  /* Screens */
-  --breakpoint-sm: 30rem; /*480px*/
-  --breakpoint-md: 48rem; /*768px*/
-  --breakpoint-lg: 80rem; /*1280px*/
-  --breakpoint-xl: 87.5rem; /*1400px*/
-  --breakpoint-2xl: 96rem; /*1536px*/
+  --breakpoint-sm: 30rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 80rem;
+  --breakpoint-xl: 87.5rem;
+  --breakpoint-2xl: 96rem;
 
-  /* font */
-  --font-lobster: "Lobster", serif;
+  --font-cormorant: "Cormorant Garamond", serif;
   --font-inter: "Inter", sans-serif;
 }
 
@@ -35,8 +33,8 @@
     --progress-number-color: theme("colors.n.500");
     --progressbar-fill: linear-gradient(
       to right,
-      theme("colors.p.500"),
-      theme("colors.p.900")
+      theme("colors.p.400"),
+      theme("colors.p.600")
     );
   }
 
@@ -45,11 +43,11 @@
   }
 
   body {
-    @apply text-base font-inter overflow-x-clip;
+    @apply text-base font-inter overflow-x-clip bg-p-50 text-n-800;
   }
 
   p {
-    @apply text-sm leading-7 font-inter;
+    @apply text-sm leading-7 font-inter text-n-600;
   }
 
   button {
@@ -62,56 +60,65 @@
 }
 
 @layer components {
-  /* Navigation */
   .navLink {
-    @apply text-base font-medium leading-none tracking-wide capitalize cursor-pointer text-n-700 hover:text-n-800;
+    @apply text-sm font-medium leading-none tracking-widest uppercase cursor-pointer text-n-700 hover:text-p-500 transition-colors duration-300;
   }
 
   .mobileNavLink {
-    @apply text-p-50 hover:text-p-200;
+    @apply text-p-100 hover:text-p-300;
   }
 
   .dropdown-menu {
-    @apply absolute right-8 top-[70%] w-[300px] bg-p-900 backdrop-blur-[15px] rounded-lg overflow-hidden flex flex-col gap-4 items-center justify-center h-0 transition-all duration-200 ease-in-out;
+    @apply absolute right-8 top-[70%] w-[300px] bg-p-900 backdrop-blur-[15px] rounded-none overflow-hidden flex flex-col gap-4 items-center justify-center h-0 transition-all duration-200 ease-in-out;
   }
 
   .dropdown-menu.open {
-    height: 150px;
+    height: 180px;
     padding: 2rem 0;
   }
 
-  /* hero */
   .btn {
-    @apply flex items-center justify-center gap-2 px-4 py-2 text-sm tracking-wider text-white transition-colors duration-300 bg-p-900 hover:bg-p-700 border-p-900 font-inter lg:py-3 lg:px-9;
+    @apply flex items-center justify-center gap-2 px-6 py-3 text-xs tracking-widest uppercase text-white transition-all duration-300 bg-p-900 hover:bg-p-700 border border-p-900 font-inter lg:py-4 lg:px-10;
+  }
+
+  .btn-outline {
+    @apply flex items-center justify-center gap-2 px-6 py-3 text-xs tracking-widest uppercase text-p-900 transition-all duration-300 bg-transparent hover:bg-p-900 hover:text-white border border-p-900 font-inter lg:py-4 lg:px-10;
+  }
+
+  .btn-gold {
+    @apply flex items-center justify-center gap-2 px-6 py-3 text-xs tracking-widest uppercase text-p-950 transition-all duration-300 bg-p-500 hover:bg-p-600 hover:text-white border border-p-500 font-inter lg:py-4 lg:px-10;
   }
 
   .text-gradient {
     background: linear-gradient(
-      to right,
-      theme("colors.p.600"),
-      theme("colors.p.900")
+      135deg,
+      theme("colors.p.300"),
+      theme("colors.p.500"),
+      theme("colors.p.600")
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
-  /* partner logos */
   .sub_heading {
-    @apply text-xs font-medium uppercase font-inter text-p-900;
+    @apply text-xs font-medium uppercase tracking-[0.3em] font-inter text-p-500;
   }
 
   .main_heading {
-    @apply mt-2 text-2xl tracking-wide capitalize lg:text-3xl font-lobster;
+    @apply mt-2 text-3xl tracking-wide capitalize lg:text-4xl font-cormorant font-semibold text-p-950;
+  }
+
+  .gold-divider {
+    @apply w-12 h-px bg-p-500 my-4;
   }
 }
 
 @layer utilities {
-  /* partner logos */
   .logo-ticker-image {
-    @apply w-auto h-6 lg:h-9;
+    @apply w-auto h-5 lg:h-7 opacity-60 hover:opacity-100 transition-opacity;
   }
 
-  /* Products */
   .tabContainer {
     @apply flex flex-col w-full gap-8 md:flex-row md:gap-16;
 
@@ -120,15 +127,15 @@
     }
 
     h3 {
-      @apply text-3xl font-bold capitalize lg:text-4xl;
+      @apply text-4xl font-bold capitalize lg:text-5xl font-cormorant text-p-950;
     }
 
     h4 {
-      @apply mt-4 text-xl font-semibold text-p-900 md:mt-8;
+      @apply mt-4 text-sm font-semibold text-p-500 md:mt-8 tracking-widest uppercase font-inter;
     }
 
     p {
-      @apply max-w-xl mt-2;
+      @apply max-w-xl mt-2 text-n-600;
     }
 
     button {
@@ -137,11 +144,11 @@
   }
 
   .productImg {
-    @apply w-full md:w-1/2  h-[250px] md:h-[700px] md:rounded-tr-[80px] md:rounded-br-[80px] object-cover;
+    @apply w-full md:w-1/2 h-[300px] md:h-[700px] object-cover;
   }
 
   .tab-link {
-    @apply font-semibold hover:text-n-700;
+    @apply font-medium hover:text-p-500 tracking-widest uppercase text-xs font-inter transition-colors;
 
     span {
       @apply hidden sm:inline;
@@ -149,36 +156,53 @@
   }
 
   .activeTab {
-    @apply text-p-900;
+    @apply text-p-500 border-b border-p-500;
   }
 
-  /* Features */
+  /* Feature cards – hover handled via inline HTML classes */
   .feature-card {
-    @apply h-[400px] w-[368px] flex flex-col justify-center items-center p-[36px] gap-[36px] [clip-path:polygon(50%_0%,100%_25%,100%_75%,50%_100%,0%_75%,0%_25%)] transition-all duration-500 bg-center bg-no-repeat bg-cover;
-  }
-
-  #features h3 {
-    @apply relative z-0 text-xl font-semibold tracking-widest text-white uppercase transition-all duration-500 translate-y-16 group-hover:translate-y-4;
-  }
-
-  #features p {
-    @apply relative z-0 text-center text-white transition-all duration-500 translate-y-full opacity-0 group-hover:opacity-100 group-hover:translate-y-0;
+    @apply h-[400px] w-[368px] flex flex-col justify-center items-center p-[36px] gap-[36px] transition-all duration-500 bg-center bg-no-repeat bg-cover;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   }
 
   .feature-filter {
-    @apply absolute inset-0 transition-all duration-500 opacity-50 bg-p-700 group-hover:bg-p-900 group-hover:opacity-80 -z-10;
+    @apply absolute inset-0 transition-all duration-500 opacity-60 bg-p-900 -z-10;
   }
 
-  /* Best Sellers */
+  .group:hover .feature-filter {
+    @apply bg-p-950 opacity-80;
+  }
+
+  #features h3 {
+    @apply relative z-0 text-base font-semibold tracking-widest text-white uppercase transition-all duration-500 font-inter;
+    transform: translateY(4rem);
+  }
+
+  .group:hover #features h3,
+  #features .group:hover h3 {
+    transform: translateY(1rem);
+  }
+
+  #features p {
+    @apply relative z-0 text-center text-white/90 transition-all duration-500 text-sm;
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  #features .group:hover p {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
   .best-product-info {
     @apply mt-4 md:mt-9;
 
     h3 {
-      @apply text-lg font-semibold text-p-900 md:text-2xl;
+      @apply text-2xl font-semibold text-p-950 md:text-3xl font-cormorant;
     }
 
     p {
-      @apply max-w-lg mt-4;
+      @apply max-w-lg mt-4 text-n-600;
     }
   }
 
@@ -187,7 +211,7 @@
   }
 
   #best-sellers img {
-    @apply max-w-[600px] h-[250px] md:h-[70vh] max-h-[700px] md:rounded-tl-[80px] md:rounded-bl-[80px] object-cover;
+    @apply max-w-[600px] h-[250px] md:h-[70vh] max-h-[700px] object-cover;
   }
 
   .slick-dots {
@@ -202,56 +226,76 @@
     @apply flex flex-col gap-8 mb-8 lg:flex-row;
   }
 
-  /* Stats */
   .stats-item {
     h1 {
-      @apply text-6xl lg:text-8xl font-lobster text-center tracking-wider leading-none font-bold text-transparent bg-clip-text bg-[linear-gradient(24deg,rgba(255,255,255,1)_40%,rgba(121,220,180,1)_100%)];
+      @apply text-6xl lg:text-8xl font-cormorant text-center tracking-wider leading-none font-bold;
+      background: linear-gradient(24deg, rgba(255,255,255,1) 40%, hsl(43,74%,65%) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     h2 {
-      @apply mt-2 text-xs text-center lg:text-base text-white/50;
+      @apply mt-2 text-xs text-center lg:text-sm tracking-widest uppercase font-inter;
+      color: rgba(255,255,255,0.4);
     }
   }
 
-  /* Contact */
   .contact-info {
     @apply w-full;
 
     > div {
-      @apply flex items-center gap-2 px-2 py-2 bg-p-600;
+      @apply flex items-center gap-2 px-3 py-2;
+      background: hsl(0,0%,15%);
     }
 
     h1 {
-      @apply text-white capitalize;
+      @apply text-white capitalize text-sm tracking-widest uppercase font-inter;
     }
 
     p {
-      @apply mt-2 text-base;
+      @apply mt-2 text-base text-n-700;
     }
   }
 
-  /* tất cả sản phẩm */
   .product-details {
-    @apply absolute top-full group-hover:top-[calc(100%-120px)] h-[120px] p-4 bg-white/70 w-full backdrop-blur-xs flex flex-col items-center justify-center transition-all duration-500 text-center;
+    @apply absolute top-full h-[120px] p-4 bg-white/90 w-full backdrop-blur-xs flex flex-col items-center justify-center transition-all duration-500 text-center;
+    top: 100%;
+  }
 
-    h3 {
-      @apply text-base tracking-wide capitalize text-n-800;
-    }
-
-    p {
-      @apply mt-2 text-sm tracking-wide text-n-700 line-clamp-2;
-    }
+  .group:hover .product-details {
+    top: calc(100% - 120px);
   }
 
   .portfolio-item img {
-    @apply transition-all duration-500 group-hover:scale-110;
+    @apply transition-all duration-500;
+  }
+
+  .group:hover .portfolio-item img {
+    @apply scale-110;
   }
 
   #allProduct-filters a {
-    @apply text-xs font-medium capitalize text-n-500 hover:text-n-700 md:text-base;
+    @apply text-xs font-medium tracking-widest uppercase text-n-500 hover:text-p-500 md:text-sm transition-colors font-inter;
   }
 
   .activeFilter {
-    @apply !text-p-900 border-b-2 border-b-p-900;
+    @apply !text-p-500 border-b-2 border-b-p-500;
+  }
+
+  .ingredient-tag {
+    @apply inline-block px-3 py-1 text-xs tracking-widest uppercase font-inter border border-p-300 text-p-600 mr-2 mb-2;
+  }
+
+  .scent-note {
+    @apply flex flex-col items-center text-center p-4 gap-2;
+
+    span {
+      @apply text-2xl;
+    }
+
+    p {
+      @apply text-xs tracking-widest uppercase font-inter text-n-600 mt-1;
+    }
   }
 }

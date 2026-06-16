@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tin Tức – AVELIS | Cập Nhật Mới Nhất Từ Thương Hiệu</title>
+  <meta name="description"
+    content="Tin tức mới nhất từ AVELIS – ra mắt sản phẩm, khuyến mãi độc quyền, sự kiện thương hiệu và cập nhật về nước hoa cá nhân hóa YOUR SCENT EDP." />
+  <link type="text/css" rel="stylesheet" href="./css/showHideNav.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link href="./dist/output.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+  <script src="./js/jquery.hidescroll.js" defer></script>
+  <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script defer type="module" src="./js/main.js"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: hsl(40, 20%, 98%);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .news-tag {
+      display: inline-block;
+      padding: 2px 10px;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      border: 1px solid hsl(43, 74%, 49%);
+      color: hsl(43, 74%, 49%);
+      margin-bottom: 10px;
+    }
+
+    .news-card {
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .news-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    }
+
+    .ticker-wrap {
+      overflow: hidden;
+      background: hsl(43, 74%, 49%);
+      padding: 10px 0;
+    }
+
+    .ticker-content {
+      display: inline-block;
+      white-space: nowrap;
+      animation: ticker 30s linear infinite;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: hsl(0, 0%, 5%);
+    }
+
+    @keyframes ticker {
+      0% {
+        transform: translateX(100vw);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <header class="relative z-50">
+    <div class="flex items-center justify-center navbar bg-p-50/95 backdrop-blur-sm border-b border-n-100">
+      <div class="max-w-[1536px] w-full px-6 py-5 md:py-6 md:px-[72px] flex items-center justify-between">
+        <a href="./index.html" class="flex items-center gap-3 flex-none">
+          <div class="flex flex-col leading-none">
+            <span
+              style="font-family:'Cormorant Garamond',serif; font-size:1.6rem; font-weight:600; letter-spacing:0.25em; color:hsl(0,0%,10%)">AVELIS</span>
+            <span
+              style="font-size:0.55rem; letter-spacing:0.35em; text-transform:uppercase; color:hsl(43,74%,49%); font-family:'Inter',sans-serif; margin-top:1px">Your
+              Scent</span>
+          </div>
+        </a>
+        <nav class="items-center justify-end hidden w-full gap-8 lg:flex">
+          <a href="./products.html" class="navLink">Sản Phẩm</a>
+          <a href="./about.html" class="navLink">Giới Thiệu</a>
+          <a href="./blog.html" class="navLink">Blog</a>
+          <a href="./news.html" class="navLink" style="color:hsl(43,74%,49%)">Tin Tức</a>
+          <a href="./contact.html" class="navLink">Liên Hệ</a>
+        </nav>
+        <div class="block cursor-pointer lg:hidden" id="toggle_btn">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <line x1="2" y1="5" x2="20" y2="5" stroke="hsl(0,0%,10%)" stroke-width="1.5" />
+            <line x1="2" y1="11" x2="20" y2="11" stroke="hsl(0,0%,10%)" stroke-width="1.5" />
+            <line x1="2" y1="17" x2="20" y2="17" stroke="hsl(0,0%,10%)" stroke-width="1.5" />
+          </svg>
+        </div>
+        <div class="dropdown-menu lg:hidden">
+          <a href="./products.html" class="navLink mobileNavLink">Sản Phẩm</a>
+          <a href="./about.html" class="navLink mobileNavLink">Giới Thiệu</a>
+          <a href="./blog.html" class="navLink mobileNavLink">Blog</a>
+          <a href="./news.html" class="navLink mobileNavLink">Tin Tức</a>
+          <a href="./contact.html" class="navLink mobileNavLink">Liên Hệ</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <span class="ticker-content">
+      ✦ AVELIS YOUR SCENT EDP — Ra mắt chính thức tháng 6/2025 &nbsp;&nbsp;&nbsp; ✦ Miễn phí ship cho đơn từ 500.000đ
+      &nbsp;&nbsp;&nbsp; ✦ Đặt hàng qua Zalo: 0932 182 907 &nbsp;&nbsp;&nbsp; ✦ Phiên bản FOR HIM &amp; FOR HER — đang
+      có hàng &nbsp;&nbsp;&nbsp; ✦ Bộ quà tặng cá nhân hóa — liên hệ để đặt trước &nbsp;&nbsp;&nbsp;
+    </span>
+  </div>
+
+  <!-- HERO -->
+  <section class="relative h-[45vh] max-h-[400px] overflow-hidden bg-p-950">
+    <img src="./assets/heading.jpg" alt="AVELIS Tin Tức"
+      class="absolute inset-0 w-full h-full object-cover object-top opacity-35" />
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+      <p class="text-xs tracking-[0.5em] uppercase font-inter text-p-400 mb-3" data-aos="fade-up">Thương Hiệu · Sản Phẩm
+        · Sự Kiện</p>
+      <h1 data-aos="fade-up" data-aos-delay="100"
+        style="font-family:'Cormorant Garamond',serif; font-size:clamp(2.5rem,6vw,4.5rem); color:white; font-weight:400; letter-spacing:0.05em">
+        Tin Tức <em style="font-style:italic; color:hsl(43,74%,65%)">AVELIS</em>
+      </h1>
+      <p class="text-white/40 text-xs tracking-widest uppercase font-inter mt-3" data-aos="fade-up"
+        data-aos-delay="200">Cập nhật mới nhất từ thương hiệu nước hoa của bạn</p>
+    </div>
+  </section>
+
+  <!-- TIN NỔI BẬT -->
+  <section class="bg-p-50">
+    <div class="container">
+      <div class="mb-10 text-center" data-aos="fade-up">
+        <h2 class="sub_heading">Nổi Bật</h2>
+        <h1 class="main_heading">Tin Tức <span class="text-gradient">Mới Nhất</span></h1>
+        <div class="gold-divider mx-auto"></div>
+      </div>
+
+      <!-- Featured big card -->
+      <div class="news-card bg-white border border-n-100 overflow-hidden mb-8" data-aos="fade-up">
+        <div class="flex flex-col lg:flex-row">
+          <div class="overflow-hidden lg:w-1/2" style="height:380px">
+            <img src="./assets/heading.jpg" alt="AVELIS Ra Mắt"
+              class="w-full h-full object-cover object-top transition-transform duration-700 hover:scale-105" />
+          </div>
+          <div class="p-8 lg:p-12 flex flex-col justify-center lg:w-1/2">
+            <span class="news-tag">Ra Mắt · Tháng 6/2025</span>
+            <h2
+              style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.8rem,3vw,2.5rem); color:hsl(0,0%,10%); font-weight:400; line-height:1.25; margin-top:0.5rem">
+              AVELIS YOUR SCENT EDP Chính Thức Ra Mắt — Nước Hoa Độc Bản Đầu Tiên Dành Cho Gen Z Việt Nam
+            </h2>
+            <div style="width:35px; height:1px; background:hsl(43,74%,49%); margin:1.25rem 0"></div>
+            <p class="text-n-500 text-sm leading-relaxed mb-6">
+              Sau nhiều tháng phát triển và thử nghiệm, AVELIS chính thức ra mắt dòng sản phẩm <strong>YOUR SCENT
+                EDP</strong> với hai phiên bản FOR HIM và FOR HER. Mỗi chai là một trải nghiệm mùi hương độc nhất — biến
+              đổi theo cơ địa riêng của từng người đeo. Đây là lần đầu tiên một thương hiệu nước hoa Việt Nam ứng dụng
+              công nghệ Personal Chemistry Perfume ở phân khúc đại chúng.
+            </p>
+            <div class="flex gap-3 flex-wrap">
+              <a href="./products.html" class="btn">Xem Sản Phẩm</a>
+              <a href="./contact.html" class="btn-outline">Đặt Hàng Ngay</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grid news -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+
+        <!-- Card 1 -->
+        <article class="news-card bg-white border border-n-100 overflow-hidden" data-aos="fade-up">
+          <div class="overflow-hidden h-52">
+            <img src="./assets/9.jpg" alt="FOR HIM FOR HER"
+              class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105" />
+          </div>
+          <div class="p-6">
+            <span class="news-tag">Sản Phẩm</span>
+            <h3
+              style="font-family:'Cormorant Garamond',serif; font-size:1.35rem; color:hsl(0,0%,10%); font-weight:500; line-height:1.3; margin-bottom:0.75rem">
+              FOR HIM & FOR HER — Hai Phiên Bản, Một Triết Lý
+            </h3>
+            <p class="text-n-500 text-sm leading-relaxed mb-4">Phiên bản FOR HIM với whiskey và gỗ sồi mạnh mẽ. FOR HER
+              với lê, nhài và xạ hương thanh lịch. Cùng một thương hiệu, hai cá tính hoàn toàn khác nhau.</p>
+            <div class="flex items-center justify-between">
+              <span class="text-n-400 text-xs font-inter">Tháng 6/2025</span>
+              <a href="./products.html"
+                class="text-xs tracking-widest uppercase font-inter text-p-600 hover:text-p-500 transition-colors flex items-center gap-1">Xem
+                thêm <svg width="10" height="10" viewBox="0 0 14 14" fill="none">
+                  <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" />
+                </svg></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="news-card bg-white border border-n-100 overflow-hidden" data-aos="fade-up" data-aos-delay="50">
+          <div class="overflow-hidden h-52">
+            <img src="./assets/12.jpg" alt="Khuyến mãi khai trương"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+          </div>
+          <div class="p-6">
+            <span class="news-tag">Khuyến Mãi</span>
+            <h3
+              style="font-family:'Cormorant Garamond',serif; font-size:1.35rem; color:hsl(0,0%,10%); font-weight:500; line-height:1.3; margin-bottom:0.75rem">
+              Ưu Đãi Khai Trương — Miễn Phí Shipping Toàn Quốc
+            </h3>
+            <p class="text-n-500 text-sm leading-relaxed mb-4">Nhân dịp ra mắt chính thức, AVELIS tặng miễn phí vận
+              chuyển toàn quốc cho tất cả đơn hàng từ 500.000đ. Thời gian có hạn — đặt hàng ngay hôm nay.</p>
+            <div class="flex items-center justify-between">
+              <span class="text-n-400 text-xs font-inter">Tháng 6/2025</span>
+              <a href="./contact.html"
+                class="text-xs tracking-widest uppercase font-inter text-p-600 hover:text-p-500 transition-colors flex items-center gap-1">Đặt
+                hàng <svg width="10" height="10" viewBox="0 0 14 14" fill="none">
+                  <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" />
+                </svg></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="news-card bg-white border border-n-100 overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+          <div class="overflow-hidden h-52">
+            <img src="./assets/10.jpg" alt="Bộ quà tặng"
+              class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105" />
+          </div>
+          <div class="p-6">
+            <span class="news-tag">Quà Tặng</span>
+            <h3
+              style="font-family:'Cormorant Garamond',serif; font-size:1.35rem; color:hsl(0,0%,10%); font-weight:500; line-height:1.3; margin-bottom:0.75rem">
+              Bộ Quà Tặng Cá Nhân Hóa — Độc Quyền Cho Dịp Đặc Biệt
+            </h3>
+            <p class="text-n-500 text-sm leading-relaxed mb-4">Hộp quà AVELIS bao gồm chai nước hoa, thiệp viết tay
+              "Crafted For: ___", túi giấy nhám cao cấp và nhãn cá nhân hóa tên người nhận.</p>
+            <div class="flex items-center justify-between">
+              <span class="text-n-400 text-xs font-inter">Tháng 6/2025</span>
+              <a href="./contact.html"
+                class="text-xs tracking-widest uppercase font-inter text-p-600 hover:text-p-500 transition-colors flex items-center gap-1">Tư
+                vấn <svg width="10" height="10" viewBox="0 0 14 14" fill="none">
+                  <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" />
+                </svg></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="news-card bg-white border border-n-100 overflow-hidden" data-aos="fade-up">
+          <div class="overflow-hidden h-52">
+            <img src="./assets/3.jpg" alt="AVELIS có mặt trên Shopee"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+          </div>
+          <div class="p-6">
+            <span class="news-tag">Kênh Bán Hàng</span>
+            <h3
+              style="font-family:'Cormorant Garamond',serif; font-size:1.35rem; color:hsl(0,0%,10%); font-weight:500; line-height:1.3; margin-bottom:0.75rem">
+              Đặt Hàng Qua Zalo & Instagram — Nhanh, Tiện, Uy Tín
+            </h3>
+            <p class="text-n-500 text-sm leading-relaxed mb-4">Hiện tại bạn có thể đặt hàng trực tiếp qua Zalo
+              <strong>0932 182 907</strong> hoặc inbox Instagram AVELIS. Xác nhận đơn trong vòng 30 phút, giao hàng 2–5
+              ngày.</p>
+            <div class="flex items-center justify-between">
+              <span class="text-n-400 text-xs font-inter">Tháng 6/2025</span>
+              <a href="./contact.html"
+                class="text-xs tracking-widest uppercase font-inter text-p-600 hover:text-p-500 transition-colors flex items-center gap-1">Liên
+                hệ <svg width="10" height="10" viewBox="0 0 14 14" fill="none">
+                  <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" />
+                </svg></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="news-card bg-white border border-n-100 overflow-hidden" data-aos="fade-up" data-aos-delay="50">
+          <div class="overflow-hidden h-52">
+            <img src="./assets/11.jpg" alt="Review khách hàng"
+              class="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105" />
+          </div>
+          <div class="p-6">
+            <span class="news-tag">Cộng Đồng</span>
+            <h3
+              style="font-family:'Cormorant Garamond',serif; font-size:1.35rem; color:hsl(0,0%,10%); font-weight:500; line-height:1.3; margin-bottom:0.75rem">
+              Những Người Đầu Tiên Đeo AVELIS — Họ Nói Gì?
+            </h3>
+            <p class="text-n-500 text-sm leading-relaxed mb-4">Hàng chục khách hàng đầu tiên đã nhận sản phẩm và chia sẻ
+              trải nghiệm: "Mùi rất khác khi xịt lên da, ấm hơn, bí ẩn hơn trong chai — đúng nghĩa là mùi của tôi."</p>
+            <div class="flex items-center justify-between">
+              <span class="text-n-400 text-xs font-inter">Tháng 6/2025</span>
+              <a href="https://www.instagram.com/p/DZJ4quxuGCa/" target="_blank"
+                class="text-xs tracking-widest uppercase font-inter text-p-600 hover:text-p-500 transition-colors flex items-center gap-1">Xem
+                trên IG <svg width="10" height="10" viewBox="0 0 14 14" fill="none">
+                  <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" />
+                </svg></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="news-card bg-white border border-n-100 overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+          <div class="overflow-hidden h-52">
+            <img src="./assets/8.jpg" alt="Hợp tác thương hiệu"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+          </div>
+          <div class="p-6">
+            <span class="news-tag">Hợp Tác</span>
+            <h3
+              style="font-family:'Cormorant Garamond',serif; font-size:1.35rem; color:hsl(0,0%,10%); font-weight:500; line-height:1.3; margin-bottom:0.75rem">
+              AVELIS Tìm Kiếm Đối Tác Phân Phối & Collab Thương Hiệu
+            </h3>
+            <p class="text-n-500 text-sm leading-relaxed mb-4">Chúng tôi đang mở cơ hội hợp tác với các cửa hàng thời
+              trang, beauty store và individual reseller. Liên hệ để nhận báo giá sỉ và chính sách đại lý độc quyền.</p>
+            <div class="flex items-center justify-between">
+              <span class="text-n-400 text-xs font-inter">Tháng 6/2025</span>
+              <a href="./contact.html"
+                class="text-xs tracking-widest uppercase font-inter text-p-600 hover:text-p-500 transition-colors flex items-center gap-1">Liên
+                hệ hợp tác <svg width="10" height="10" viewBox="0 0 14 14" fill="none">
+                  <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" />
+                </svg></a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA DARK -->
+  <section class="bg-p-950">
+    <div class="container py-16">
+      <div class="text-center" data-aos="fade-up">
+        <h2 class="sub_heading" style="color:hsl(43,74%,49%)">Không Bỏ Lỡ</h2>
+        <h1
+          style="font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,4vw,3rem); color:white; margin-top:0.5rem; font-weight:400">
+          Đăng Ký Nhận <em style="font-style:italic; color:hsl(43,74%,65%)">Tin Tức Sớm Nhất</em>
+        </h1>
+        <div style="width:40px; height:1px; background:hsl(43,74%,49%); margin:1.5rem auto"></div>
+        <p class="text-white/50 text-sm max-w-md mx-auto mb-8">Nhận thông báo về sản phẩm mới, ưu đãi độc quyền và sự
+          kiện AVELIS trước tất cả mọi người.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+          <a href="https://www.facebook.com/share/1Dehv88caj/?mibextid=wwXIfr" target="_blank"
+            class="btn-gold flex items-center justify-center gap-2">
+            <svg width="14" height="14" fill="hsl(0,0%,5%)" viewBox="0 0 24 24">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg>
+            Theo Dõi Facebook
+          </a>
+          <a href="https://www.instagram.com/p/DZJ4quxuGCa/" target="_blank" class="btn"
+            style="background:transparent; border-color:rgba(255,255,255,0.25); display:inline-flex; align-items:center; gap:8px">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <rect x="2" y="2" width="20" height="20" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none" />
+            </svg>
+            Theo Dõi Instagram
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-p-950 border-t border-n-800">
+    <div class="container py-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <span
+          style="font-family:'Cormorant Garamond',serif; font-size:1.5rem; letter-spacing:0.25em; color:white">AVELIS</span>
+        <p class="text-white/30 text-xs font-inter">© 2025 AVELIS. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="./index.html" class="text-white/40 hover:text-p-400 text-xs font-inter transition-colors">Trang
+            Chủ</a>
+          <a href="./products.html" class="text-white/40 hover:text-p-400 text-xs font-inter transition-colors">Sản
+            Phẩm</a>
+          <a href="./blog.html" class="text-white/40 hover:text-p-400 text-xs font-inter transition-colors">Blog</a>
+          <a href="./contact.html" class="text-white/40 hover:text-p-400 text-xs font-inter transition-colors">Liên
+            Hệ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () { if (window.AOS) AOS.init({ duration: 700, once: true }); });
+  </script>
+</body>
+
+</html>
